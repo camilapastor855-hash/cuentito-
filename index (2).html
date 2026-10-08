@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuento Mágico Interactivo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Librería PDF.js para leer el PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <!-- Librería PageFlip para el efecto de pasar página -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Lector Mágico de Cuentos</h1>
+        <p id="loading">Cargando el cuento mágico, por favor espera...</p>
+        
+        <!-- Panel de Herramientas de Accesibilidad y Control -->
+        <div class="tools-container" id="tools-container" style="display: none;">
+            <div class="nav-controls">
+                <button id="prev-btn" class="control-btn">⬅️ Página Anterior</button>
+                <span id="page-indicator">Página 1 de ?</span>
+                <button id="next-btn" class="control-btn">Página Siguiente ➡️</button>
+            </div>
+            
+            <div class="accessibility-controls">
+                <button id="read-btn" class="access-btn">🔊 Leer en Voz Alta</button>
+                <button id="stop-read-btn" class="access-btn stop-btn" style="display:none;">⏹️ Detener Lectura</button>
+                <button id="zoom-in-btn" class="access-btn">A+ Agrandar</button>
+                <button id="zoom-out-btn" class="access-btn">A- Achicar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="book-container">
+        <!-- El flipbook se generará aquí -->
+        <div id="flip-book" class="flip-book"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
